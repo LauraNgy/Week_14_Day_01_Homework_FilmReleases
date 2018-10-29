@@ -4,9 +4,16 @@ import Film from './Film';
 class FilmList extends Component {
 
   render() {
+    const filmNodes = this.props.data.map((film) => {
+      return <Film
+        key={film.id}
+        name={film.name}
+        url={film.url} />
+    });
+
     return (
       <ol>
-        <Film name="Spider-Man: Into the Spider-Verse" url="https://www.imdb.com/title/tt4633694/?ref_=rlm"/>
+        {filmNodes}
       </ol>
     )
   }
